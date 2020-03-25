@@ -1,0 +1,3 @@
+[submodule "roles/e-and-cs.fortigate-policy"]
+	path = roles/e-and-cs.fortigate-policy
+	url = https://github.com/E-and-CS/fortigate_policy

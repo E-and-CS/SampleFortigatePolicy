@@ -1,0 +1,18 @@
+---
+rulegroup99:
+  comment: "Egress Rules"
+  ssl_ssh_profile: default_ssl_ssh_inspect_profile
+  ips_sensor: default_ips_monitor_profile
+
+  rule01: # RuleID 9901
+    sources:
+    - ad
+    - rds
+    - admin
+    - web
+    - db
+    destinations: all
+    services:
+    - web
+    - DNS
+    - PING

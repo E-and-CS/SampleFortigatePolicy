@@ -1,0 +1,37 @@
+---
+rulegroup10:
+  comment: "Common Admin Rules"
+  ssl_ssh_profile: default_ssl_ssh_inspect_profile
+  ips_sensor: default_ips_monitor_profile
+
+  rule01: # RuleID 1001
+    sources:
+    - ad
+    - rds
+    - admin
+    destinations: ad
+    services: active_directory
+  
+  rule02: # RuleID 1002
+    sources: admin
+    destinations: rds
+    services: RDP # Inbuilt
+
+  rule03: # RuleID 1003
+    comment: "Backups"
+    ips_enable: no # This disables all the IPS inspection for this rule
+    sources: backup
+    destinations:
+    - ad
+    - rds
+    - admin
+    - web
+    - db
+    services: SSH
+
+  rule04: # RuleID 1004
+    comment: "Admin access to the Backups"
+    ips_enable: no # This disables all the IPS inspection for this rule
+    sources: admin
+    destinations: backup
+    services: SSH

@@ -1,0 +1,9 @@
+---
+web_ips_sensors:
+  web_ips_monitor_profile:
+    template_ips_policy: default_ips_monitor_profile
+    comment: Enhanced Web IPS Monitor Profile
+    entries:
+    - signature: ACal.Calendar.Cookie.Based.Authentication.Bypass
+      log_packet: true
+      action: monitor

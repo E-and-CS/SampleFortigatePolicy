@@ -1,0 +1,22 @@
+---
+all_ssl_ssh_inspect_profiles:
+  default_ssl_ssh_inspect_profile:
+    comment: CA cert used to inspect traffic
+    ca: "{{ inspect_ca | default('Fortinet_CA_SSL') }}"
+    inspect_all: true
+    inspect_ssh: false
+
+all_ips_sensors:
+  default_ips_monitor_profile:
+    comment: Default IPS Monitor Only Profile
+    entries:
+    - severity:
+      - info
+      - low
+      - medium
+      action: monitor
+    - severity:
+      - high
+      - critical
+      log_packet: true
+      action: monitor

@@ -1,0 +1,7 @@
+rulegroup30:
+  comment: "Database Rules"
+
+  rule01: # RuleID 3001
+    sources: web
+    destinations: db
+    services: MYSQL # Inbuilt

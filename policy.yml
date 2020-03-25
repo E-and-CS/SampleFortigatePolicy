@@ -1,0 +1,15 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Install required Python Libraries
+    pip:
+      state: present
+      name: fortiosapi
+      virtualenv: /var/lib/awx/venv/ansible
+    run_once: true
+    delegate_to: localhost
+
+  - name: Run Policy
+    include_role:
+      name: e-and-cs.fortigate-policy

@@ -1,0 +1,17 @@
+rulegroup20:
+  comment: "Web Rules"
+  ssl_ssh_profile: default_ssl_ssh_inspect_profile
+  ips_sensor: web_ips_monitor_profile
+
+  rule01: # RuleID 2001
+    sources: all # Inbuilt
+    destinations: web
+    services: web
+
+rulegroup30:
+  comment: "Database Rules"
+
+  rule01: # RuleID 3001
+    sources: web
+    destinations: db
+    services: MYSQL # Inbuilt

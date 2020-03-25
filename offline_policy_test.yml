@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Run Policy
+    include_role:
+      name: e-and-cs.fortigate-policy
+    vars:
+      dry_run: True
+      online_checks: False

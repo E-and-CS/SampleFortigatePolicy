@@ -12,21 +12,21 @@
 [tag_fortigate_admin]
 
 [fgtAdmin:children]
-fortigate_admin
-tag_fortigate_admin
+fortigate_admin_true
+tag_fortigate_admin_true
 
 [fgtCommon:children]
-fortigate
-tag_fortigate
+fortigate_true
+tag_fortigate_true
 
 [fgtCommon:vars]
 ansible_username=fgtadmin
 ansible_connection=local
 
 [fgtDb:children]
-fortigate_db
-tag_fortigate_db
+fortigate_db_true
+tag_fortigate_db_true
 
 [fgtWeb:children]
-fortigate_web
-tag_fortigate_web
+fortigate_web_true
+tag_fortigate_web_true
